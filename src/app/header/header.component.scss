@@ -1,0 +1,63 @@
+@import '../../styles-variables.scss';
+
+abe-header {
+  nav {
+    width: 100%;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, sm)) {
+    nav {
+      width: 80%;
+    }
+  }
+}
+
+@media( max-width: map-get($grid-breakpoints, sm)) {
+  .main-tab     { display: 1; }
+  .main-toolbar { display: none; }
+}
+
+@media( min-width: map-get($grid-breakpoints, sm)) {
+  .main-tab     { display: none; }
+  .main-toolbar { display: 1; }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.lil-spacer{
+  flex: 0.5 1 auto;
+}
+
+.main-toolbar{
+  background-color: white;
+  justify-content: center;
+}
+
+.name{
+  margin-left: 5%;
+}
+
+.router-right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.router-right-item{
+
+  font-size: 20px;
+  text-align-last: center;
+
+}
+
+.router-right-item:active, .router-right-item:focus {
+  outline: 0;
+  border: none;
+  outline-style: hidden;
+  -moz-outline-style: none;
+}
+.main-tab{
+  min-width: 100%;
+}
