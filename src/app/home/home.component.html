@@ -3,25 +3,61 @@
 
 
 <img src = "../../assets/img/serious_dev.jpg" class = "professional-image">
+<div class = "skills-big">
+<div fxLayout="row" fxLayoutGap="32px" class = "skill-layout">
+  <ng-container *ngFor="let tile of tiles">
+
+      <mat-card class="skill-card" [ngStyle] = "{'background-color': tile.color}">
+
+          <div class = "skill-icon sk-icon-big" [innerHTML]= 'tile.iconBIG'></div>
+          <div class = "skill-icon sk-icon-small" [innerHTML]= 'tile.iconSMALL'></div>
+
+          <div class = "skill-text-center">
+              <h1>{{tile.text}}</h1>
+          </div>
+
+          <h3 class = "skill-firstCap marignalizeTop"> {{tile.firstCap}} </h3>
+          <div class = 'first-section'>
+            <p>{{tile.firstCapContent}}</p>
+          </div>
+          <h3 class = "skill-secCap marignalizeTop"> {{tile.secCap}} </h3>
+          <div class = 'sec-section'>
+            <p>{{tile.secCapContent}}</p>
+          </div>
+
+      </mat-card>
 
 
-<div class="container skills-grid d-flex align-items-stretch">
-  <div class="row align-items-start">
-    <div class="col" *ngFor="let tile of tiles" [ngStyle] = "{'background-color': tile.color}">
-      <div class = "skill-icon sk-icon-big" [innerHTML]= 'tile.iconBIG'></div>
-      <div class = "skill-icon sk-icon-small" [innerHTML]= 'tile.iconSMALL'></div>
-
-      <div class = "skill-division">
-          <h1>{{tile.text}}</h1>
-        </div>
-        <h3 class = "skill-firstCap"> {{tile.firstCap}} </h3>
-      <div class = 'first-section'>
-        <p>{{tile.firstCapContent}}</p>
-      </div>
-      <h3 class = "skill-secCap"> {{tile.secCap}} </h3>
-      <div class = 'sec-section'>
-        <p>{{tile.secCapContent}}</p>
-      </div>
-    </div>
-  </div>
+  </ng-container>
+ </div>
 </div>
+<div class = "skills-small">
+<div fxLayout="column" fxLayoutGap="16px"  fxLayoutAlign="center center">
+  <ng-container *ngFor="let tile of tiles">
+
+      <mat-card class="skill-card-small" [ngStyle] = "{'background-color': tile.color}">
+
+          <div class = "skill-icon sk-icon-big" [innerHTML]= 'tile.iconBIG'></div>
+          <div class = "skill-icon sk-icon-small" [innerHTML]= 'tile.iconSMALL'></div>
+
+          <div class = "skill-text-center">
+              <h1>{{tile.text}}</h1>
+          </div>
+
+          <h3 class = "skill-firstCap marignalizeTop"> {{tile.firstCap}} </h3>
+          <div class = 'first-section'>
+            <p>{{tile.firstCapContent}}</p>
+          </div>
+          <h3 class = "skill-secCap marignalizeTop"> {{tile.secCap}} </h3>
+          <div class = 'sec-section'>
+            <p>{{tile.secCapContent}}</p>
+          </div>
+
+      </mat-card>
+
+
+  </ng-container>
+ </div>
+</div>
+ZMien row na column w odpowiedniej kondycji
+

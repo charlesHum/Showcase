@@ -1,0 +1,23 @@
+
+<div class="container skills-grid">
+  <div class="row align-items-start skills-row">
+    <div class="col-md-3 skills-col h-100 d-inline-block" *ngFor="let tile of tiles">
+      <div class="card" [ngStyle] = "{'background-color': tile.color}">
+      <div class = "skill-icon sk-icon-big" [innerHTML]= 'tile.iconBIG'></div>
+      <div class = "skill-icon sk-icon-small" [innerHTML]= 'tile.iconSMALL'></div>
+
+      <div class = "skill-division">
+          <h1>{{tile.text}}</h1>
+        </div>
+        <h3 class = "skill-firstCap"> {{tile.firstCap}} </h3>
+      <div class = 'first-section'>
+        <p>{{tile.firstCapContent}}</p>
+      </div>
+      <h3 class = "skill-secCap"> {{tile.secCap}} </h3>
+      <div class = 'sec-section'>
+        <p>{{tile.secCapContent}}</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

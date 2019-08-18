@@ -12,6 +12,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NavbarModule, WavesModule } from 'angular-bootstrap-md';
 import { MatTabsModule } from '@angular/material/tabs';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     BrowserModule,
     AppRoutingModule,
     MatCardModule,
+    MatGridListModule,
     NavbarModule,
     MatTabsModule,
     AngularFontAwesomeModule,
@@ -30,6 +33,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     MDBBootstrapModule.forRoot(),
     MatButtonModule,
     MatToolbarModule,
+    FlexLayoutModule,
     BrowserAnimationsModule
 
   ],

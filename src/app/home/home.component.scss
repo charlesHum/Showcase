@@ -25,14 +25,46 @@
 
 .skill-icon{
   margin-top: 2rem;
+  text-align: center;
 }
 
-@media( min-width: map-get($grid-breakpoints, sm)) {
+@media( min-width: map-get($grid-breakpoints, md)) {
   .sk-icon-big   { display: 1; }
   .sk-icon-small { display: none; }
+  .skills-big { display: 1;}
+  .skills-small { display: none;}
 }
 
-@media( max-width: map-get($grid-breakpoints, sm)) {
+@media( max-width: map-get($grid-breakpoints, md)) {
   .sk-icon-big   { display: none; }
   .sk-icon-small { display: 1; }
+  .skills-big { display: none;}
+  .skills-small { display: 1;}
+}
+.skill-card{
+  width: 20%;
+}
+
+.skill-text-center{
+  text-align: center;
+}
+
+.skill-layout{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  padding-bottom: 5rem;
+  justify-content: center;
+}
+
+.skill-card-small{
+  width: 80%;
+}
+
+.skills-small{
+  margin-top: 5rem;
+}
+
+.marignalizeTop{
+  margin-top: 3rem;
 }
