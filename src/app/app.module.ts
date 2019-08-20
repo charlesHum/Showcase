@@ -14,12 +14,18 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FooterComponent } from './footer/footer.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ProjectsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
