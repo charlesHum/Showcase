@@ -1,0 +1,51 @@
+
+h4{
+    font-size:2em;
+}
+p{
+    font-size:1.3em;
+    line-height:1.1em;
+}
+
+.card {
+  width: 100%;
+  height: 300px;
+  color:#D6D600;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  background-color: black; /* fallback color */
+  background-position: center;
+  background-size: cover;
+  transition:all 0.3s ease-in-out;
+  opacity:1;
+}
+.card:hover .card-img,
+.card:focus .card-img {
+  transform: scale(1.02);
+  opacity:0.5;
+}
+
+.card:hover .card-img-overlay{
+    color:#730d0d;
+}
+
+.card-img-overlay>h4, .card-img-overlay>p{
+    visibility:hidden;
+}
+
+.card-img-overlay:hover h4, .card-img-overlay:hover p{
+    visibility: visible;
+}
+
+.card:hover .card-img-overlay p{
+    font-size:1.5em;
+    letter-spacing:0.02em;
+}
+
+.projects{
+  margin-top: 10%;
+  margin-bottom: 10%;
+}

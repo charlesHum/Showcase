@@ -17,6 +17,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './footer/footer.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -32,6 +37,12 @@ import { ContactComponent } from './contact/contact.component';
     AppRoutingModule,
     MatCardModule,
     MatGridListModule,
+    FormsModule,
+    MatSnackBarModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    ScrollToModule.forRoot(),
+    HttpClientModule,
     NavbarModule,
     MatTabsModule,
     AngularFontAwesomeModule,

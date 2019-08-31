@@ -8,19 +8,26 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 80rem;
-  height: 40rem;
+  width: 80%;
+  height: 40%;
 }
 .skills-grid{
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
 
-.howdy{
+.howdy, .title{
   margin-top: 5rem;
-  margin-left: 20rem;
-  margin-right: 20rem;
-  display: inline-block;
+  text-align: center;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.portfolio{
+  margin-bottom: 2rem;
+  text-align: center;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .skill-icon{
@@ -67,4 +74,9 @@
 
 .marignalizeTop{
   margin-top: 3rem;
+}
+
+.projects-display{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }

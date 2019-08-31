@@ -1,18 +1,21 @@
 <mat-toolbar class = "main-toolbar">
   <mat-toolbar-row>
-    <span class = "name" routerLink = "/">Jarema Radom</span>
+    <div class = "namelogo">
+        <img src = "../../assets/img/logo.png" class = "logo" routerLink = "/">
+    </div>
+
     <span class="spacer"></span>
     <div class = "router-right">
-      <button class = "router-right-item" mat-button>Home</button>
-      <button class = "router-right-item" mat-button>Projects</button>
-      <button class = "router-right-item" mat-button>Contact</button>
+      <button class = "router-right-item" mat-button routerLink = "/"[ngx-scroll-to]="'#home'">Home</button>
+      <button class = "router-right-item" mat-button routerLink = "/" [ngx-scroll-to]="'#projects'">Projects</button>
+      <button class = "router-right-item" mat-button routerLink = "/contact">Contact</button>
     </div>
     <span class="lil-spacer"></span>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-tab-group class = "main-tab">
-  <mat-tab label="Home"  routerLink = "/"></mat-tab>
-  <mat-tab label="Projecs" routerLink = "/projects"></mat-tab>
-  <mat-tab label="Contact" routerLink = "/contact"></mat-tab>
+  <mat-tab label="Home"  [ngx-scroll-to]="'#home'" routerLink = "/"></mat-tab>
+  <mat-tab label="Projecs" [ngx-scroll-to]="'#projects'" routerLink = "/"></mat-tab>
+  <mat-tab label="Contact"  routerLink = "/contact"></mat-tab>
 </mat-tab-group>

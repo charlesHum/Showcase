@@ -35,8 +35,8 @@ abe-header {
   justify-content: center;
 }
 
-.name{
-  margin-left: 5%;
+.namelogo {
+  margin-left: 8rem;
 }
 
 .router-right{
@@ -60,4 +60,12 @@ abe-header {
 }
 .main-tab{
   min-width: 100%;
+}
+
+.logo {
+  object-fit: cover;
+  margin-top: 2rem;
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
 }

@@ -1,7 +1,18 @@
 
-1. Footer
+1. Footer ++
 2. Aminacje
-3. Footer smol, flagi
+3. Footer smol, flagi ++
+4. Logo ++
+5. Projekty
+6. Kontakt pozastopkowy ++
+9. Kontakt service i backend ++
+
+7. Testy
+8. Testy e2e
+10. Autentykacja routsów
+11. Autoryzacja
+12. Project backend
+13. Panel admina
 
 
 <div class="container skills-grid">

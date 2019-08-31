@@ -10,9 +10,16 @@ mongoose.connect(config.DB, { useNewUrlParser: true }).then(
 );
 mongoose.set('useCreateIndex', true)
 mongoose.set('useFindAndModify', false);
+const msgRoute = require('./routes/message.route');
+
+
+
 const app = express();
-app.use(bodyParser.json());
 app.use(cors());
+
+app.use(bodyParser.json());
+app.use('/msg', msgRoute);
+
 // app.use('/company', companyRoute);
 
 const port = process.env.PORT || 4000;
