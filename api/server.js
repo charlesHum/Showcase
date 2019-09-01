@@ -11,7 +11,7 @@ mongoose.connect(config.DB, { useNewUrlParser: true }).then(
 mongoose.set('useCreateIndex', true)
 mongoose.set('useFindAndModify', false);
 const msgRoute = require('./routes/message.route');
-
+const projectRoute = require('./routes/project.route');
 
 
 const app = express();
@@ -19,6 +19,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 app.use('/msg', msgRoute);
+app.use('/project', projectRoute);
 
 // app.use('/company', companyRoute);
 

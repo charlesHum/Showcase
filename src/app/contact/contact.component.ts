@@ -38,7 +38,7 @@ export class ContactComponent implements OnInit {
       this.contactForm.controls.issue.setErrors({long: true});
     } else if (!this.contactForm.errors && !this.contactForm.pristine) {
       this.submitted = true;
-      this.msgService.sendMessage(this.contactForm.controls.name.value.length,
+      this.msgService.sendMessage(this.contactForm.controls.name.value,
          this.contactForm.controls.address.value.length, this.contactForm.controls.issue.value).subscribe(res => {
           this.contactForm.reset();
           this.submitted = false;

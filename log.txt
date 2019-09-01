@@ -13,7 +13,8 @@
 11. Autoryzacja
 12. Project backend
 13. Panel admina
-
+14. ogranicz CMa
+15. ANIMACJE
 
 <div class="container skills-grid">
   <div class="row align-items-start skills-row">
