@@ -5,7 +5,7 @@ import Project from '../models/Project';
 import { ProjectService } from '../services/project.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { FileValidator } from 'ngx-material-file-input';
 @Component({
   selector: 'app-cm',
   templateUrl: './cm.component.html',
@@ -14,6 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class CmComponent implements OnInit {
 
   submitted = false;
+  readonly maxSize = 10485760;
   messageColumns: string[] = ['name', 'email', 'createdAt', 'content', 'delet'];
   projectColumns: string[] = ['name', 'description', 'imgpath', 'createdAt', 'delet'];
   messages: Message[] = [];
@@ -39,7 +40,10 @@ export class CmComponent implements OnInit {
     this.projectForm = this.formBuilder.group({
       name: ['', Validators.required],
       desc: ['', [Validators.required]],
-      imgpath: ['', Validators.required]
+      requiredfile: [
+        undefined,
+        [Validators.required, FileValidator.maxContentSize(this.maxSize)]
+      ]
   });
   }
 
@@ -51,18 +55,33 @@ export class CmComponent implements OnInit {
     return this.projectForm.controls[control].errors;
   }
 
-  onSubmit() {
-    console.log('todo');
-    if (!this.projectForm.errors && !this.projectForm.pristine) {
-      this.projectService.addProject(this.projectForm.controls.name.value, this.projectForm.controls.desc.value,
-        this.projectForm.controls.imgpath.value).subscribe( res => {
-          console.log(res);
-          this.projectForm.reset();
-          this.submitted = false;
-          this.matSnackBar.open(' Message succesfully sent ', 'OK', {duration: 2000});
-          console.log(res);
-        });
-    }
+  delet(project: Project) {
+    console.log(project);
+    this.projectService.deletProject(project._id).subscribe(res => {
+      if (res) {
+        this.matSnackBar.open(' Project removed succesfully ', 'OK', {duration: 2000});
+        this.projectDataSource = this.projectDataSource.filter( (x: Project) => x._id !== project._id);
+      }
+    });
+    // if succ remove from visibility
   }
 
+  onSubmit() {
+    const formData = new FormData();
+    formData.append('image', this.projectForm.controls.requiredfile.value._files[0]);
+    if (!this.projectForm.errors && !this.projectForm.pristine) {
+      this.projectService.addPic(formData).subscribe((res: string) => {
+        if (res) {
+          this.projectService.addProject(this.projectForm.controls.name.value, this.projectForm.controls.desc.value,
+            res).subscribe( project => {
+              console.log(project);
+              this.projectForm.reset();
+              this.submitted = false;
+              this.matSnackBar.open(' Project succesfully saved ', 'OK', {duration: 2000});
+              this.projectDataSource = this.projectDataSource.concat(project);
+            });
+        }
+      });
+    }
+  }
 }

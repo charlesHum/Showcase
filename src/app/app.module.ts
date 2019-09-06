@@ -25,6 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CmComponent } from './cm/cm.component';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { CmComponent } from './cm/cm.component';
     MatIconModule,
     MatGridListModule,
     FormsModule,
+    MaterialFileInputModule,
     MatSnackBarModule,
     ReactiveFormsModule,
     MatInputModule,

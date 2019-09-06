@@ -14,11 +14,16 @@ export class ProjectService {
     return this.http.get(this.uri);
   }
 
-  addProject(name, description, img) {
-    return this.http.post(this.uri + '/add', {name, description, img});
+  addPic(img: FormData) {
+    return this.http.post(this.uri + '/addPic', img);
   }
 
-  deletProject(id: number) {
+  addProject(name: string, description: string, filename: string) {
+    console.log(filename);
+    return this.http.post(this.uri + '/add', {name, description, filename});
+  }
+
+  deletProject(id: string) {
     return this.http.delete(this.uri + '/' + id);
   }
 

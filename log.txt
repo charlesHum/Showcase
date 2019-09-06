@@ -6,15 +6,24 @@
 5. Projekty
 6. Kontakt pozastopkowy ++
 9. Kontakt service i backend ++
+12. Project backend ++
+20. Front end, add, remove when add remove. ++
+19. If something shitty goes wrong,delet the iamge. ++
+18. Opanować maksymalny storage size. ++
+
 
 7. Testy
 8. Testy e2e
 10. Autentykacja routsów
 11. Autoryzacja
-12. Project backend
+
 13. Panel admina
 14. ogranicz CMa
 15. ANIMACJE
+16. Słuchawki i krzesło
+17. Shorten displayed name of file,it looks riddiculous
+19. Deliver pic to frontend.
+
 
 <div class="container skills-grid">
   <div class="row align-items-start skills-row">
@@ -97,3 +106,42 @@
       </div>
 
 </footer>
+
+
+<div class="row justify-content-md-center">
+        <div class="col-12 col-md-4">
+            <div class="card mb-3">
+            <div class="card-img" style="background-image:url(https://placeimg.com/350/480/any/grayscale?t=1527110912130);"></div>
+            <div class="card-img-overlay d-flex flex-column justify-content-between">
+                <h4 class="card-title">Title Here</h4>
+                <p class="card-text">Some content here.</p>
+            </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card mb-3">
+          <div class="card-img" style="background-image:url(https://placeimg.com/350/480/any/grayscale?t=1527110912130);"></div>
+          <div class="card-img-overlay d-flex flex-column justify-content-between">
+              <h4 class="card-title">Title Here</h4>
+              <p class="card-text">Some content here.</p>
+          </div>
+          </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card mb-3">
+        <div class="card-img" style="background-image:url(https://placeimg.com/350/480/any/grayscale?t=1527110912130);"></div>
+        <div class="card-img-overlay d-flex flex-column justify-content-between">
+            <h4 class="card-title">Title Here</h4>
+            <p class="card-text">Some content here.</p>
+        </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card mb-3">
+      <div class="card-img" style="background-image:url(https://placeimg.com/350/480/any/grayscale?t=1527110912130);"></div>
+      <div class="card-img-overlay d-flex flex-column justify-content-between">
+          <h4 class="card-title">Title Here</h4>
+          <p class="card-text">Some content here.</p>
+      </div>
+      </div>
+  </div>
