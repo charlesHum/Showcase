@@ -3,7 +3,7 @@
   <ng-container *ngFor="let project of projects">
           <div class="col-12 col-md-4">
               <div class="card mb-3">
-              <div class="card-img" style="background-image:url(https://placeimg.com/350/480/any/grayscale?t=1527110912130);"></div>
+              <img class="card-img" [src]="project.image"/>
               <div class="card-img-overlay d-flex flex-column justify-content-between">
                   <h4 class="card-title">{{project.name}}</h4>
                   <p class="card-text">{{project.description}}</p>

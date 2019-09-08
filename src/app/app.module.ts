@@ -26,6 +26,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CmComponent } from './cm/cm.component';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     HomeComponent,
     ProjectsComponent,
     ContactComponent,
-    CmComponent
+    CmComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,7 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     FormsModule,
     MaterialFileInputModule,
     MatSnackBarModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     MatInputModule,
     ScrollToModule.forRoot(),
@@ -60,7 +63,6 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     MatButtonModule,
     MatToolbarModule,
     FlexLayoutModule,
-    BrowserAnimationsModule
 
   ],
   providers: [],

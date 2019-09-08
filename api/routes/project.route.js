@@ -3,6 +3,7 @@ const express = require('express'),
       projectRoutes = express.Router(),
       multer = require('multer'),
       fs = require('fs'),
+      jwtAuth = require('../services/authService'),
       PATH = './uploads/project',
       mongoose = require('mongoose'),
       { RateLimiterMemory } = require('rate-limiter-flexible');
@@ -45,21 +46,13 @@ projectRoutes.route('/getPic/:imagepath').get( function(req,res){
   Project.find(function(err, projects){
     if(err){console.log(err)}
     else{
-      res.json(projects);
-      fs.readFile(PATH + '/' + req.param.imagepath, (err, data) => {
-        console.log(data);
-      })
-      // res.sendFile();
-      // todo nowy observable
-      // napierdol json a pozniej filesem dla kazdego innego
-      // a pozniej done
-      // todo dostarczyc filesy
+      res.sendFile(req.params.imagepath, {root: PATH });
     }
   })
 })
 
 
-projectRoutes.route('/addPic').post(upload.single('image'), function (req, res) {
+projectRoutes.route('/addPic').post(jwtAuth, upload.single('image'), function (req, res) {
   if (!req.file) {
     return res.send(
       false
@@ -70,7 +63,7 @@ projectRoutes.route('/addPic').post(upload.single('image'), function (req, res) 
 });
 
 
-projectRoutes.route('/add').post(function (req, res) {
+projectRoutes.route('/add').post(jwtAuth ,function (req, res) {
   let project = new Project();
   rateLimiter.consume(req.headers.host, 2) // consume 2 points
     .then((rateLimiterRes) => {
@@ -90,7 +83,7 @@ projectRoutes.route('/add').post(function (req, res) {
     });
 });
 
-projectRoutes.route('/:id').delete( function (req, res) {
+projectRoutes.route('/:id').delete(jwtAuth, function (req, res) {
 
   Project.findById(req.params.id, (err, succ) => {
     if(succ){

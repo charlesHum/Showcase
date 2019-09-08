@@ -6,6 +6,8 @@ import { ProjectService } from '../services/project.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FileValidator } from 'ngx-material-file-input';
+import { JwtService } from '../services/jwt.service';
+
 @Component({
   selector: 'app-cm',
   templateUrl: './cm.component.html',
@@ -23,10 +25,13 @@ export class CmComponent implements OnInit {
   projectForm: FormGroup;
   projectDataSource = [];
   constructor(private msgService: MsgService, private projectService: ProjectService,
-              private formBuilder: FormBuilder, private matSnackBar: MatSnackBar) { }
+              private formBuilder: FormBuilder, private matSnackBar: MatSnackBar,
+              private authService: JwtService) {
+
+               }
 
   ngOnInit() {
-    this.msgService.getMessages().subscribe((res: Message[]) => {
+    this.msgService.getMessages(this.authService.getToken()).subscribe((res: Message[]) => {
       console.log(res);
       this.messages = res;
       this.msgDataSource = this.messages;
@@ -57,7 +62,7 @@ export class CmComponent implements OnInit {
 
   delet(project: Project) {
     console.log(project);
-    this.projectService.deletProject(project._id).subscribe(res => {
+    this.projectService.deletProject(project._id, this.authService.getToken()).subscribe(res => {
       if (res) {
         this.matSnackBar.open(' Project removed succesfully ', 'OK', {duration: 2000});
         this.projectDataSource = this.projectDataSource.filter( (x: Project) => x._id !== project._id);
@@ -70,10 +75,10 @@ export class CmComponent implements OnInit {
     const formData = new FormData();
     formData.append('image', this.projectForm.controls.requiredfile.value._files[0]);
     if (!this.projectForm.errors && !this.projectForm.pristine) {
-      this.projectService.addPic(formData).subscribe((res: string) => {
+      this.projectService.addPic(formData, this.authService.getToken()).subscribe((res: string) => {
         if (res) {
           this.projectService.addProject(this.projectForm.controls.name.value, this.projectForm.controls.desc.value,
-            res).subscribe( project => {
+            res, this.authService.getToken()).subscribe( project => {
               console.log(project);
               this.projectForm.reset();
               this.submitted = false;

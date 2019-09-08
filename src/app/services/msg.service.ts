@@ -10,8 +10,8 @@ export class MsgService {
 
   constructor(private http: HttpClient) { }
 
-  getMessages() {
-    return this.http.get(this.uri);
+  getMessages(token) {
+    return this.http.get(this.uri, {headers: { Authorization: `${token}` }});
   }
 
   sendMessage(name, email, content) {

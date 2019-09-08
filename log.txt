@@ -10,21 +10,30 @@
 20. Front end, add, remove when add remove. ++
 19. If something shitty goes wrong,delet the iamge. ++
 18. Opanować maksymalny storage size. ++
+19. Deliver pic to frontend. ++
+20. Sprawdzic jpegi ++
+15. ANIMACJE ++
+13. Panel admina ++
+10. Autentykacja routsów ++
+11. Autoryzacja ++
+14. ogranicz CMa ++
+18. Skrypcik do rejestrowania sie ++
+19. Haszowanie hasla ++
+21. Put token in local storage so poor faggots can refresh ++
+20. Walidacja haszowanego hasla ++
 
 
 7. Testy
 8. Testy e2e
-10. Autentykacja routsów
-11. Autoryzacja
 
-13. Panel admina
-14. ogranicz CMa
-15. ANIMACJE
 16. Słuchawki i krzesło
-17. Shorten displayed name of file,it looks riddiculous
-19. Deliver pic to frontend.
+17. Logo xDDDD
+22. bez tokena w local storagu ma sie nie dac wejsc
+23. Redirecty z loginu do cmu jesli jest w local storagu,jesli nie ma to nazad xDD
+24. Sprawdzić co się wykonuje pierwsze
 
 
+<img class="animated bounce infinite" src="https://mdbootstrap.com/img/logo/mdb-transparent.png">
 <div class="container skills-grid">
   <div class="row align-items-start skills-row">
     <div class="col-md-3 skills-col h-100 d-inline-block" *ngFor="let tile of tiles">
@@ -145,3 +154,10 @@
       </div>
       </div>
   </div>
+
+
+<img class="animated bounce infinite" src="https://mdbootstrap.com/img/logo/mdb-transparent.png">
+
+
+a@a.a areyoublind
+b@b.b 0000000000

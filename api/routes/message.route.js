@@ -1,5 +1,6 @@
-const express = require('express');
-const app = express();
+const express = require('express'),
+      app = express(),
+      authService = require('../services/authService');
 const messageRoutes = express.Router();
 const mongoose = require('mongoose');
 const { RateLimiterMemory } = require('rate-limiter-flexible');
@@ -11,7 +12,7 @@ const opts = {
 };
 const rateLimiter = new RateLimiterMemory(opts);
 
-messageRoutes.route('/').get( function(req,res){
+messageRoutes.route('/').get(authService, function(req,res){
   Message.find(function(err, messages){
       if(err){console.log(err)}
       else{
