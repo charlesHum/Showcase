@@ -18,4 +18,9 @@ export class MsgService {
     return this.http.post(this.uri + '/add', {name, email, content});
   }
 
+  deletMsg(id, token) {
+    return this.http.delete(this.uri + '/' + id, {headers: { Authorization: `${token}` }});
+
+  }
+
 }

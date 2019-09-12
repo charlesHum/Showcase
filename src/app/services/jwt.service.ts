@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap, map } from 'rxjs/operators';
 import Auth from '../models/Auth';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,12 @@ export class JwtService {
   loggedIn = false;
   token: string;
 
-  constructor( private httpClient: HttpClient ) {
-    console.log(localStorage.getItem('token'));
+  constructor( private httpClient: HttpClient, private router: Router) {
     const token = localStorage.getItem('token');
     if (token) {
       this.token = token;
       this.loggedIn = true;
+      router.navigate(['/cm']);
     }
   }
 
@@ -42,6 +43,6 @@ export class JwtService {
   }
 
   getToken() {
-    return this.token;
+    return JSON.parse(localStorage.getItem('token'));
   }
 }

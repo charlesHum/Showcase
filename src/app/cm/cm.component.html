@@ -1,4 +1,3 @@
-
 <h1 class = "title"> Messages </h1>
 <div fxLayout="column" fxLayoutGap="16px"  fxLayoutAlign="center center" class = "animated slideInRight">
 <table mat-table [dataSource]="msgDataSource" class="mat-elevation-z8">
@@ -30,7 +29,7 @@
   <!-- Delet Column -->
   <ng-container matColumnDef="delet">
       <th mat-header-cell *matHeaderCellDef> Delete </th>
-      <td mat-cell *matCellDef="let element"><i class="fa fa-trash delet"></i></td>
+      <td mat-cell *matCellDef="let element"><i class="fa fa-trash delet" (click) = "deletMessage(element)"></i></td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="messageColumns"></tr>
@@ -72,7 +71,7 @@
   <!-- Delet Column -->
   <ng-container matColumnDef="delet">
       <th mat-header-cell *matHeaderCellDef> Delete </th>
-      <td mat-cell *matCellDef="let element" (click) = "delet(element)"><i class="fa fa-trash delet"></i></td>
+      <td mat-cell *matCellDef="let element" (click) = "deletProject(element)"><i class="fa fa-trash delet"></i></td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="projectColumns"></tr>

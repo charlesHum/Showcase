@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FileValidator } from 'ngx-material-file-input';
 import { JwtService } from '../services/jwt.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cm',
@@ -26,8 +27,10 @@ export class CmComponent implements OnInit {
   projectDataSource = [];
   constructor(private msgService: MsgService, private projectService: ProjectService,
               private formBuilder: FormBuilder, private matSnackBar: MatSnackBar,
-              private authService: JwtService) {
-
+              private authService: JwtService, private router: Router) {
+                if (!localStorage.getItem('token')) {
+                  router.navigate(['/login']);
+                }
                }
 
   ngOnInit() {
@@ -60,15 +63,22 @@ export class CmComponent implements OnInit {
     return this.projectForm.controls[control].errors;
   }
 
-  delet(project: Project) {
-    console.log(project);
+  deletProject(project: Project) {
     this.projectService.deletProject(project._id, this.authService.getToken()).subscribe(res => {
       if (res) {
         this.matSnackBar.open(' Project removed succesfully ', 'OK', {duration: 2000});
         this.projectDataSource = this.projectDataSource.filter( (x: Project) => x._id !== project._id);
       }
     });
-    // if succ remove from visibility
+  }
+
+  deletMessage(message: Message) {
+    this.msgService.deletMsg(message._id, this.authService.getToken()).subscribe(res => {
+      if (res) {
+        this.matSnackBar.open(' Message removed succesfully ', 'OK', {duration: 2000});
+        this.msgDataSource = this.msgDataSource.filter( (x: Message) => x._id !== message._id);
+      }
+    });
   }
 
   onSubmit() {

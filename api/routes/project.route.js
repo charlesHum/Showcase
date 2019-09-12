@@ -84,7 +84,6 @@ projectRoutes.route('/add').post(jwtAuth ,function (req, res) {
 });
 
 projectRoutes.route('/:id').delete(jwtAuth, function (req, res) {
-
   Project.findById(req.params.id, (err, succ) => {
     if(succ){
       if(succ.imgpath){

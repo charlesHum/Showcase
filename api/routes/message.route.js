@@ -1,10 +1,10 @@
 const express = require('express'),
       app = express(),
+      jwtAuth = require('../services/authService'),
+      messageRoutes = express.Router(),
+      Message = require('../models/message'),
+      { RateLimiterMemory } = require('rate-limiter-flexible'),
       authService = require('../services/authService');
-const messageRoutes = express.Router();
-const mongoose = require('mongoose');
-const { RateLimiterMemory } = require('rate-limiter-flexible');
-let Message = require('../models/message')
 
 const opts = {
   points: 2, // 2 points
@@ -37,6 +37,13 @@ messageRoutes.route('/add').post( function (req, res) {
     });
 });
 
-
+messageRoutes.route('/:id').delete(jwtAuth, function (req, res) {
+  Message.findByIdAndDelete(req.params.id, (err, succ) => {
+    if(succ){
+      console.log(succ);
+      res.send(true);
+    }
+  })
+});
 
 module.exports = messageRoutes;

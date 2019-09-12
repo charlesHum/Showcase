@@ -21,6 +21,12 @@
 19. Haszowanie hasla ++
 21. Put token in local storage so poor faggots can refresh ++
 20. Walidacja haszowanego hasla ++
+22. bez tokena w local storagu ma sie nie dac wejsc ++
+23. Redirecty z loginu do cmu jesli jest w local storagu,jesli nie ma to nazad xDD ++
+24. Sprawdzić co się wykonuje pierwsze ++
+26. Logout ++
+27. Wyjaśnić zagadkę emaili ++
+28. Delet mail ++
 
 
 7. Testy
@@ -28,9 +34,8 @@
 
 16. Słuchawki i krzesło
 17. Logo xDDDD
-22. bez tokena w local storagu ma sie nie dac wejsc
-23. Redirecty z loginu do cmu jesli jest w local storagu,jesli nie ma to nazad xDD
-24. Sprawdzić co się wykonuje pierwsze
+
+26. Dopytać czy frontend jest oks
 
 
 <img class="animated bounce infinite" src="https://mdbootstrap.com/img/logo/mdb-transparent.png">
