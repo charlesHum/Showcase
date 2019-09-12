@@ -27,16 +27,18 @@
 26. Logout ++
 27. Wyjaśnić zagadkę emaili ++
 28. Delet mail ++
+17. Logo xDDDD ++
+
+
 
 
 7. Testy
 8. Testy e2e
 
 16. Słuchawki i krzesło
-17. Logo xDDDD
 
 26. Dopytać czy frontend jest oks
-
+27. Podgląd projektów
 
 <img class="animated bounce infinite" src="https://mdbootstrap.com/img/logo/mdb-transparent.png">
 <div class="container skills-grid">
