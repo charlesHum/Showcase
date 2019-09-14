@@ -40,6 +40,14 @@
 26. Dopytać czy frontend jest oks
 27. Podgląd projektów
 
+28. Test wysylania wiadomosci
+29. wejscie do cma i zwalidowanie czy wiadomosc zostala wyslana
+30. Logout appears after login
+31. Login e2e
+32. Services e2e
+
+33. Go full prod mode
+
 <img class="animated bounce infinite" src="https://mdbootstrap.com/img/logo/mdb-transparent.png">
 <div class="container skills-grid">
   <div class="row align-items-start skills-row">

@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { LoginComponent } from '../login/login.component';
 
 describe('CmComponent', () => {
   let component: CmComponent;
@@ -17,7 +18,7 @@ describe('CmComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CmComponent ],
+      declarations: [ CmComponent, LoginComponent ],
       imports: [MatTableModule, HttpClientTestingModule, RouterTestingModule, MatTabsModule, MatSnackBarModule,
          FormsModule, MatIconModule, ReactiveFormsModule, MaterialFileInputModule, MatFormFieldModule, BrowserAnimationsModule]
     })
@@ -32,5 +33,11 @@ describe('CmComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render title in a h1 tag', () => {
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('Projects');
   });
 });

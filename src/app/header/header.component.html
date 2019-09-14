@@ -8,10 +8,10 @@
 
     <span class="spacer"></span>
     <div class = "router-right">
-      <button class = "router-right-item" mat-button routerLink = "/"[ngx-scroll-to]="'#home'">Home</button>
-      <button class = "router-right-item" mat-button routerLink = "/" [ngx-scroll-to]="'#projects'">Projects</button>
-      <button class = "router-right-item" mat-button routerLink = "/contact">Contact</button>
-      <button class = "router-right-item" mat-button *ngIf="isLogged()" (click) = "logout()" routerLink = "/">Logout</button>
+      <button id = 'home' class = "router-right-item" mat-button routerLink = "/"[ngx-scroll-to]="'#home'">Home</button>
+      <button id = 'projects' class = "router-right-item" mat-button routerLink = "/" [ngx-scroll-to]="'#projects'">Projects</button>
+      <button id = 'contact' class = "router-right-item" mat-button routerLink = "/contact">Contact</button>
+      <button id = 'logout' class = "router-right-item" mat-button *ngIf="isLogged()" (click) = "logout()" routerLink = "/">Logout</button>
     </div>
     <span class="lil-spacer"></span>
   </mat-toolbar-row>

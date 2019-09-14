@@ -5,13 +5,20 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ProjectsComponent } from './projects/projects.component';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule, MatCardModule
+        RouterTestingModule, MatCardModule, ScrollToModule.forRoot(), MatToolbarModule,
+        MatTabsModule, MatTableModule, HttpClientTestingModule, BrowserAnimationsModule
       ],
       declarations: [
         AppComponent,
@@ -22,7 +29,7 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   }));
-  /*
+
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
@@ -34,12 +41,4 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('showcase');
   });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to showcase!');
-  });
-  */
 });
