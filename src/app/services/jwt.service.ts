@@ -23,10 +23,15 @@ export class JwtService {
 
   login(email: string, password: string) {
     return this.httpClient.post(this.uri + '/login', {email, password}).pipe(tap((res: Auth) => {
-      console.log(res);
       this.token = res.token;
       this.loggedIn = res.auth;
       localStorage.setItem('token', JSON.stringify(res.token));
+    }));
+  }
+
+  delet(email: string, password: string) {
+    return this.httpClient.post(this.uri + '/delete', {email, password}).pipe(tap((res) => {
+
     }));
   }
 

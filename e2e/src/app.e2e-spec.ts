@@ -6,11 +6,12 @@ describe('workspace-project App', () => {
 
   beforeEach(() => {
     page = new AppPage();
+    browser.refresh();
   });
 
   it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to showcase!');
+    //page.navigateTo();
+    page.getTitleText().then(x => expect(x).toContain('Full Stack Developer'));
   });
 
   afterEach(async () => {

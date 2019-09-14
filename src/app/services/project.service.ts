@@ -35,7 +35,6 @@ export class ProjectService {
   }
 
   addProject(name: string, description: string, filename: string, token: string) {
-    console.log(filename);
     return this.http.post(this.uri + '/add', {name, description, filename}, {headers: { Authorization: `${token}` }});
   }
 

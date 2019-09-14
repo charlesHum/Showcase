@@ -33,7 +33,6 @@ export class ContactComponent implements OnInit {
 
 
   onSubmit() {
-    console.log(this.contactForm)
     if (this.contactForm.controls.issue.value && this.contactForm.controls.issue.value.length >= 5000) {
       this.contactForm.controls.issue.setErrors({long: true});
     } else if (!this.contactForm.errors && !this.contactForm.pristine) {

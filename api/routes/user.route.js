@@ -40,6 +40,30 @@ userRoutes.route('/login').post( function(req,res){
   });
 })
 
-
+userRoutes.route('/delete').post( function(req,res){
+  rateLimiter.consume(req.headers.host, 2)
+    .then((rateLimiterRes) => {
+  User.find({email: req.body.email}, (err, user) => {
+    if(user.length > 0){
+      bcrypt.compare(req.body.password, user[0].password, function(err, valid) {
+        if(valid){
+          User.findByIdAndDelete(user[0]._id, (err, res) => {
+            if (err) console.log(err)
+            else res.status(200).send('success');
+          });
+        }
+        else{
+          res.status(400).json(false);
+        }
+      });
+    }
+    else{
+      res.status(400).json(false);
+    }
+  })
+  }).catch((rateLimiterRes) => {
+    res.status(512).send(new Error('Overloaded'));
+  });
+})
 
 module.exports = userRoutes;

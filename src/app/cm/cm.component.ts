@@ -35,13 +35,11 @@ export class CmComponent implements OnInit {
 
   ngOnInit() {
     this.msgService.getMessages(this.authService.getToken()).subscribe((res: Message[]) => {
-      console.log(res);
       this.messages = res;
       this.msgDataSource = this.messages;
     });
 
     this.projectService.getProjects().subscribe((res: Project[]) => {
-      console.log(res);
       this.projects = res;
       this.projectDataSource = this.projects;
     });
@@ -89,7 +87,6 @@ export class CmComponent implements OnInit {
         if (res) {
           this.projectService.addProject(this.projectForm.controls.name.value, this.projectForm.controls.desc.value,
             res, this.authService.getToken()).subscribe( project => {
-              console.log(project);
               this.projectForm.reset();
               this.submitted = false;
               this.matSnackBar.open(' Project succesfully saved ', 'OK', {duration: 2000});

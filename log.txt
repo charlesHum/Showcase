@@ -28,25 +28,28 @@
 27. Wyjaśnić zagadkę emaili ++
 28. Delet mail ++
 17. Logo xDDDD ++
+7. Testy ++
 
 
 
 
-7. Testy
-8. Testy e2e
+
 
 16. Słuchawki i krzesło
 
 26. Dopytać czy frontend jest oks
 27. Podgląd projektów
 
-28. Test wysylania wiadomosci
-29. wejscie do cma i zwalidowanie czy wiadomosc zostala wyslana
-30. Logout appears after login
-31. Login e2e
-32. Services e2e
+8. E2E:
+  28. Test wysylania wiadomosci
+  29. wejscie do cma i zwalidowanie czy wiadomosc zostala wyslana
+  30. Logout appears after login
+  31. Login e2e
 
 33. Go full prod mode
+34. Testowanie serwisów;
+35. User delete
+
 
 <img class="animated bounce infinite" src="https://mdbootstrap.com/img/logo/mdb-transparent.png">
 <div class="container skills-grid">

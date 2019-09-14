@@ -34,7 +34,6 @@ describe('HeaderComponent', () => {
 
   it('should contain all headers', () => {
     const compiled = fixture.debugElement;
-    console.log(compiled.query(By.css('#home')));
     expect(compiled.query(By.css('#home')).nativeElement.textContent).toContain('Home');
     expect(compiled.query(By.css('#projects')).nativeElement.textContent).toContain('Projects');
     expect(compiled.query(By.css('#contact')).nativeElement.textContent).toContain('Contact');

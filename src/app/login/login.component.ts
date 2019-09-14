@@ -35,7 +35,6 @@ export class LoginComponent implements OnInit {
     const val = this.loginForm.value;
 
     if (val.email && val.password) {
-        console.log('Entered');
         this.jwtServie.login(val.email, val.password)
             .subscribe(
                 () => {

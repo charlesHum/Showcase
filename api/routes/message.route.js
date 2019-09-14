@@ -40,7 +40,6 @@ messageRoutes.route('/add').post( function (req, res) {
 messageRoutes.route('/:id').delete(jwtAuth, function (req, res) {
   Message.findByIdAndDelete(req.params.id, (err, succ) => {
     if(succ){
-      console.log(succ);
       res.send(true);
     }
   })
