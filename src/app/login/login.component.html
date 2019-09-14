@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
             <label for="address">Password</label>
-            <input type="text" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && getErrors('password') }" />
+            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && getErrors('password') }" />
             <div *ngIf="submitted && getErrors('password')" class="invalid-feedback">
                 <div *ngIf="getError('password', 'required')">Password is required/div>
             </div>
