@@ -1,0 +1,40 @@
+version: "3"
+services:
+  frontend:
+    container_name: frontend
+    restart: always
+    build: ./
+    volumes:
+    - .:/app
+    links:
+      - backend
+    networks:
+      - frontend
+    expse:
+      - 4200
+
+  backend:
+    container_name: backend
+    build: ./api
+    restart: always
+    ports:
+      - 8081:8081
+    links:
+      - mongo
+    networks:
+      - backend
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "21131:21131"
+    expose:
+      - 21131
+    networks:
+      - backend
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge

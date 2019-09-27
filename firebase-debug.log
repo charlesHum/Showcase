@@ -1,0 +1,21 @@
+[debug] [2019-09-27T15:42:10.538Z] ----------------------------------------------------------------------
+[debug] [2019-09-27T15:42:10.541Z] Command:       D:\Node\node.exe C:\Users\jarem\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2019-09-27T15:42:10.541Z] CLI Version:   7.4.0
+[debug] [2019-09-27T15:42:10.541Z] Platform:      win32
+[debug] [2019-09-27T15:42:10.541Z] Node Version:  v10.16.0
+[debug] [2019-09-27T15:42:10.542Z] Time:          Fri Sep 27 2019 17:42:10 GMT+0200 (Central European Summer Time)
+[debug] [2019-09-27T15:42:10.542Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-09-27T15:42:10.549Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-09-27T15:42:10.549Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\jarem\Desktop\JS\Responsive Showcase\showcase
+

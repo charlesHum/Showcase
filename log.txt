@@ -45,7 +45,7 @@
 
 33. Go full prod mode
 34. Translacja
-
+35. Guard
 
 <img class="animated bounce infinite" src="https://mdbootstrap.com/img/logo/mdb-transparent.png">
 <div class="container skills-grid">
@@ -175,3 +175,37 @@
 
 a@a.a areyoublind
 b@b.b 0000000000
+
+
+  mongo:
+    container_name: mongol
+    image: mongo
+    ports:
+      - "27017:27017"
+
+docker network create -d bridge common
+
+
+RUN npm install -g nodemon
+
+CMD [ "nodemon", "node server.js" ]
+
+
+
+
+FROM node:10
+
+WORKDIR /code
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["node server.js" ]
+
+
+docker run --name abba -p 49160:8080 -d gownoxd
